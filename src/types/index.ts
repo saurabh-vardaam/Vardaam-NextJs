@@ -1,7 +1,7 @@
 export type Vdata = {
     code:    number;
     message: string;
-    data:    VdataData;
+    data:    VdataData[];
 }
 
 export type VdataData = {

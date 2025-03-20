@@ -4,8 +4,6 @@ import { Widget } from "src/components/types";
 
 const SvgImage = ({data}: Widget) => {
 
-  console.log("Images Component Mounted with data:", data);
-
   if (!data) {
     return <p style={{ color: "red" }}>No Data Passed to Images Component</p>;
   }

@@ -15,28 +15,12 @@ function getSectionName(type: string) {
 
 const PageContent = ({page, scrollReveal}:{page: {data: VdataData}, scrollReveal: false}) => {
 
-  console.log(page)
   return(
     <>
       {page.data.content &&
         page.data.content.map((datas: Content, index: number) => {
           const bgImage = datas.data.background_image;
 
-        // // switch (getSectionName(section.fieldGroupName)) {
-        // //   interface ContentData {
-        // //     rows: Row[];
-        // //     Margin: string;
-        // //     padding: string;
-        // //     bg_colour: string;
-        // //     // ...other properties
-        // //   }
-        //   default:
-        // // const defaultContentData: ContentData = {
-        // //   rows: [],
-        // //   Margin: "0",
-        // //   padding: "0",
-        // //   bg_colour: "transparent",
-        // // };
           let sectionType = ""
           switch (datas.data.sectionType) {
             case "inverted":
@@ -68,10 +52,6 @@ const PageContent = ({page, scrollReveal}:{page: {data: VdataData}, scrollReveal
 
             case "PageTemplate":
               return (
-              // datas?.data && datas?.data?.template ? (
-              //   <PageContent key={`section_${index}`} page={datas?.data?.template} scrollReveal={scrollReveal} />
-              // ) : 
-              // (
                 <span key={`section_${index}`}></span>
               )
 
@@ -108,7 +88,6 @@ type MySection = {
 const SectionContent = ({datas, scrollReveal}: MySection) => {
   let sectionSpacing = "px-8 py-12 md:py-16 space-y-5 md:space-y-16"
   let colSpacing = "gap-y-10"
-  // console.log(datas.data.rows)
   switch (datas.data.sectionVerticalSpacing) {
     case "Spacious":
       sectionSpacing = "px-6 md:py-28 space-y-20"
@@ -154,7 +133,6 @@ const SectionContent = ({datas, scrollReveal}: MySection) => {
             attributes["data-sal-easing"] = "ease"
           }
 
-          // console.log(row.column)
           return (
             <div 
             {...attributes} 
@@ -195,8 +173,7 @@ const SectionContent = ({datas, scrollReveal}: MySection) => {
              
                     {col.widget &&
                         col.widget.map((widget: Widget, index: number) => {
-                          // console.log(widget,getWidgetName(widget.fieldGroupName))
-                          console.log(widget.data);
+              
                           const WidgetComponent =
                             Widgets[getWidgetName(widget.type) as keyof typeof Widgets]
                           return (WidgetComponent &&

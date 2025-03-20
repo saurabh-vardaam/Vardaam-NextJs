@@ -22,7 +22,6 @@ interface HeadingProps {
   }) => {
   const Tagname = headingLevel as React.ElementType;
 
-  console.log(heading)
   return (
     <Tagname
       className={`font-OpenSans font-semibold ${

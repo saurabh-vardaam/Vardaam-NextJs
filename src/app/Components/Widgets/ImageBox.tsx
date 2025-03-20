@@ -1,5 +1,4 @@
 import React from "react"
-// import { GatsbyImage } from "gatsby-plugin-image"
 import Link from "./NextLink"
 import Image from "next/image"
 import { Widget } from "src/components/types"
@@ -13,7 +12,6 @@ const ImageBox = ({
     description,
   },
 }: Widget) => {
-  console.log(image, title, link, linkText, description)
   return (
     <>
       <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

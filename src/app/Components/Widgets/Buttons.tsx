@@ -1,29 +1,23 @@
 import React from "react";
-// import Link from "./Link"
 import Link from "./NextLink";
 import { URL } from "src/components/types";
-// type button = {
-//   type: string;
-//   buttonName: string;
-//   url: string;
-//   target: string | null;
-// };
+
 type ButtonProps = {
   data: {
-    urls: URL[];
+    urls?: URL[];
   };
   className?: "";
   align?: string;
+  src?: string;
 };
 
-const Buttons = ({ data: {urls}, className = "", align="left" }: ButtonProps) => {
+const Buttons = ({ data: {urls = []}, className = "", align="left" }: ButtonProps) => {
     const justify =
     align === "center"
       ? "justify-center"
       : align === "left"
       ? "justify-start"
       : "justify-end";
-    console.log(urls)
   return (
     <div className={`${className} flex flex-wrap gap-4 ${justify}`}>
       {urls.map((button, index) =>
@@ -31,7 +25,6 @@ const Buttons = ({ data: {urls}, className = "", align="left" }: ButtonProps) =>
           <Link
             key={`button_${index}`}
             href={button.url}
-            // target={button.target}
             className="inline-flex justify-center rounded font-medium py-2 px-8 bg-base-BLU200 text-white hover:text-base-BLA200 hover:bg-white hover:ring-1 hover:ring-base-YEL100 transition duration-300"
           >
             {button.title}
@@ -40,7 +33,6 @@ const Buttons = ({ data: {urls}, className = "", align="left" }: ButtonProps) =>
           <Link
             key={`button_${index}`}
             href={button.url}
-            // target={button.target}
             className="group font-medium text-[#071485] capitalize relative"
           >
             {button.title}
@@ -50,7 +42,6 @@ const Buttons = ({ data: {urls}, className = "", align="left" }: ButtonProps) =>
           <Link
             key={`button_${index}`}
             href={button.url}
-            // target={button.target}
             className="inline-flex justify-center rounded py-2 px-8 bg-white ring-1 ring-base-BLA200 hover:ring-[#071485] hover:bg-[#071485] hover:text-white transition duration-300"
           >
             {button.title}

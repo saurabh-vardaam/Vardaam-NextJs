@@ -1,5 +1,4 @@
 import React from "react"
-// import Radium from "radium"
 
 const SpacerDivider = (
 {data: { width, align, marginTopAndBottom, type },sectionType,}: any // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -17,10 +16,7 @@ const SpacerDivider = (
       break
   }
 
-  console.log(type);
-
   return (
-    // <Radium.StyleRoot>
     <div
       style={{
         marginTop: `${marginTopAndBottom}px`,
@@ -38,7 +34,6 @@ const SpacerDivider = (
         <></>
       )}
     </div>
-  // </Radium.StyleRoot>
   )
 }
 
